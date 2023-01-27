@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  api:
+    image: node
+    env_file:
+      - ./.env
+    ports:
+      - ${APIPORT}:${APIPORT}
+    working_dir: /app/simple-blogs-api
+    volumes:
+      - ./:/app/simple-blogs-api
+    tty: true
+    stdin_open: true
+
+  
