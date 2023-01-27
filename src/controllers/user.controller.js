@@ -5,7 +5,13 @@ const createUser = async (req, res) => {
     return res.status(201).json(newUser);
 }
 
+const getUsers = async (req, res) => {
+    const users = await userService.getUsers();
+    return res.status(200).json(users);
+}
+
 
 module.exports = {
-    createUser
+    createUser,
+    getUsers,
 }
