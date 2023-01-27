@@ -6,11 +6,21 @@ services:
     env_file:
       - ./.env
     ports:
-      - ${APIPORT}:${APIPORT}
+      - ${PORT}:${PORT}
     working_dir: /app/simple-blogs-api
     volumes:
       - ./:/app/simple-blogs-api
     tty: true
     stdin_open: true
+    depends_on:
+      - db
+  db:
+    image: mysql
+    ports: 
+      - ${DEV_MYSQLPORT}:${DEV_MYSQLPORT}
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DEV_MYSQLPASSWORD}
+    restart: always
+
 
   

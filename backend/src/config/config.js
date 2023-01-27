@@ -16,6 +16,8 @@ const devConfig = {
   dialect: process.env.DEV_MYSQLDIALECT,
 }
 
+console.log(devConfig)
+
 module.exports = {
   development: devConfig,
   test: devConfig,

@@ -5,7 +5,8 @@
   "main": "src/server.js",
   "scripts": {
     "start": "node .",
-    "dev": "npx nodemon .",
+    "predev": "NODE_ENV=development && npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all",
+    "dev": "node .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
