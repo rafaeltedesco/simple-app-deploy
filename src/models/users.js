@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt');
+const encrypter = require('../utils/enctryper');
 
 const UserSchema = (sequelize, DataTypes) => {
     const User = sequelize.define('User', {
@@ -9,7 +9,7 @@ const UserSchema = (sequelize, DataTypes) => {
 
 
     User.beforeCreate(async (user, _options) => {
-        const hashedPassword = await bcrypt.hash(user.password, 10);
+        const hashedPassword = await encrypter.hashPassword(user.password);
         user.password = hashedPassword;
     })
 
