@@ -14,6 +14,7 @@ const devConfig = {
   database: process.env.DEV_MYSQLDATABASE,
   port: process.env.DEV_MYSQLPORT,
   dialect: process.env.DEV_MYSQLDIALECT,
+  host: process.env.DEV_MYSQLHOST,
 }
 
 console.log(devConfig)
