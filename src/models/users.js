@@ -5,6 +5,10 @@ const UserSchema = (sequelize, DataTypes) => {
         name: DataTypes.STRING,
         email: DataTypes.STRING,
         password: DataTypes.STRING,
+    },
+    {
+        tableName: 'users',
+        timestamps: false
     })
 
 
